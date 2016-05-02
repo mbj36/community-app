@@ -8,12 +8,24 @@
         <fieldset>
             <legend>{{'label.heading.workingDays' | translate}}</legend>
             <label class="control-label col-sm-2 width20">{{ 'label.input.workingDays' | translate }}</label>
-            <div class="form-group" ng-repeat="workingDay in workingDays">
-                <label class="control-label col-sm-2 width20" ng-show="showLabel(workingDay.day)" style="padding-right: 214px;"></label>
-
-                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value" ng-model="workingDay.value">
-
-                <label>{{workingDay.day}}</label>
+            <div class="form-group">
+                <label class="control-label col-sm-2 width20" ng-show="showLabel(workingDay.day)"></label>
+                <div class="alignment">
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.monday' | translate}}</label><br>
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.tuesday' | translate}}</label><br>
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.wednesday' | translate}}</label><br>
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.thursday' | translate}}</label><br>
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.friday' | translate}}</label><br>
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.saturday' | translate}}</label><br>
+                    <input class="control-label" id="workingDay.value" type="checkbox" value="workingDay.value">
+                    <label>{{'label.heading.sunday' | translate}}</label>
+                </div>
 
             <br/>
             </div>

@@ -362,6 +362,14 @@
     "#---------": "------------",
     "#Common loan/saving charges": "....",
 
+    "label.heading.monday":"Monday",
+    "label.heading.tuesday":"Tuesday",
+    "label.heading.wednesday":"Wednesday",
+    "label.heading.thursday":"Thrusday",
+    "label.heading.friday":"Friday",
+    "label.heading.saturday":"Saturday",
+    "label.heading.sunday":"Sunday",
+
     "#Headings": "..",
     "label.heading.waiveloancharge":"Waive Loan Charge",
     "label.heading.payloancharge":"Pay Loan Charge",

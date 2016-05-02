@@ -486,6 +486,15 @@
 	"label.notactivated": "No activado",
 	"label.unassigned": "Sin asignar",
 	"label.searchorpress": "Haga clic o pulse alt+X buscar",
+
+    "label.heading.monday":"Lunes",
+    "label.heading.tuesday":"Martes",
+    "label.heading.wednesday":"Miércoles",
+    "label.heading.thursday":"Jueves",
+    "label.heading.friday":"Viernes",
+    "label.heading.saturday":"Sábado",
+    "label.heading.sunday":"Domingo",
+
 	"label.search.query.matched.results.exceeds.max.length": "La consulta buscada resultó en más de 200 registros. Se muestran los primeros 200.",
 	"validation.msg.collectionsheet.calendarId.cannot.be.blank": "La hoja de recaudación no puede generarse para el centro/grupo sin adjuntar una reunión sin definir",
 	"label.heading.identities": "Identidades",

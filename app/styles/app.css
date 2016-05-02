@@ -16,7 +16,11 @@ body {
 	position: fixed;
 	right: 10%;	
 }
-
+.alignment
+{
+    margin-left: 25% !important;
+    line-height:2em;
+}
 .whitebg {
   background-color: #FFFFFF;
 }
