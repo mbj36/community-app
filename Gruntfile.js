@@ -1,5 +1,7 @@
 'use strict';
 
+var swPrecache = require('../community-app/node_modules/sw-precache/lib/sw-precache.js');
+
 module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -144,6 +146,7 @@ module.exports = function(grunt) {
             'scripts/*.js',
             'scripts/services/*.js',
             'scripts/modules/*.js',
+            '!scripts/app.js',
             '!scripts/routes.js',
             '!scripts/initialTasks.js',
             '!scripts/webstorage-configuration.js',
@@ -328,6 +331,13 @@ module.exports = function(grunt) {
             env: 'production'
         }
       }
+    },
+
+    swPrecache:{
+      dev:{
+        handleFetch: false,
+        rootDir: 'app'
+      }
     }
   });
 
@@ -344,4 +354,40 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['clean', 'copy:dev']);
   grunt.registerTask('test', ['karma']);
 
+
+function writeServiceWorkerFile(rootDir, handleFetch, callback){
+  var config = {
+    cacheId: 'mifosx-community-app',
+    dynamicUrlToDependencies:{
+
+    },
+
+  handleFetch: handleFetch,
+  logger: grunt.log.writeIn,
+  staticFileGlobs: [],
+
+  verbose: true
+
 };
+
+swPrecache.write(path.join(rootDir, 'app/service-worker.js'), config, callback);
+}
+
+
+grunt.registerMultiTask('swPrecache', function(){
+  var done = this.async();
+  var rootDir = this.data.rootDir;
+  var handleFetch = this.data.handleFetch;
+
+  writeServiceWorkerFile(rootDir, handleFetch, function(error){
+    if(error){
+      grunt.fail.warn(error);
+    }
+    done();
+  });
+});
+};
+
+
+
+
