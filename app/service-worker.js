@@ -171,6 +171,42 @@ toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/stan
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounttransfers\/template?fromAccountType=2&fromOfficeId=1/, toolbox.cacheFirst,{});
 
 
+//Users
+//post requests
+
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/authentication?username={username}&password={password}/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/oauth\/token?username={username}&password={password}&client_id={clientId}&grant_type={grant_type}&client_secret={client_secret}/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}?command=enable/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}?command=disable/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/userdetails?access_token={access_token}/, toolbox,networkFirst,{});
+
+//GET requests users
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users\/{userId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}\/permissions/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/permissions/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/passwordpreferences\/template/, toolbox.cacheFirst,{});
+
+//put requests users
+
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users\/{userId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}\/permissions/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/permissions/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/passwordpreferences\/template/, toolbox.networkFirst,{});
+
+//delete requests users
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users\/{userId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}/, toolbox.networkFirst,{});
+
+//user end
+
+
 
 
 
