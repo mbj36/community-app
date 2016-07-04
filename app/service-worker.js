@@ -149,6 +149,27 @@ toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/l
 toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loans\/{loanId}\/collaterals\/{collateralId}/, toolbox.networkFirst,{});
 
 
+//Template
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/clients\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/template?isProductMixTemplate=true/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loans\/template?templateType=individual&clientId=1/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loans\/{loanId}\/transactions\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/charges\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/offices\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/hooks\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/audits\/searchtemplate/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/reports\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accountingrules\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsproducts\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/template?clientId={clientId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/transactions\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/standinginstructions\/template?fromAccountType=2&fromOfficeId=1/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounttransfers\/template?fromAccountType=2&fromOfficeId=1/, toolbox.cacheFirst,{});
+
 
 
 
