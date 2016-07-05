@@ -1,4 +1,5 @@
 'use strict';
+
 importScripts('serviceworker-cache-polyfill.js');
 importScripts('bower_components/sw-toolbox/sw-toolbox.js');
 importScripts('cachefiles.js');
@@ -7,11 +8,11 @@ importScripts('cachefiles.js');
 toolbox.precache(filesToCache);
 
 self.addEventListener('install', function(event){
-	self.skipWaiting();
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', function(event){
-	event.waitUntil(self.clients.claim());
+  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', function(event) {
@@ -173,18 +174,17 @@ toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/acco
 
 //Users
 //post requests
-
-toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/authentication?username={username}&password={password}/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/authentication?username=mifos&password=password/, toolbox.networkFirst,{});
 toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/oauth\/token?username={username}&password={password}&client_id={clientId}&grant_type={grant_type}&client_secret={client_secret}/, toolbox.networkFirst,{});
 toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users/, toolbox.networkFirst,{});
 toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles/, toolbox.networkFirst,{});
 toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}?command=enable/, toolbox.networkFirst,{});
 toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}?command=disable/, toolbox.networkFirst,{});
-toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/userdetails?access_token={access_token}/, toolbox,networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/userdetails?access_token={access_token}/, toolbox.networkFirst,{});
 
 //GET requests users
 
-toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users/, toolbox.cacheFirst, {});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/users\/{userId}/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/roles\/{roleId}/, toolbox.cacheFirst,{});
@@ -206,13 +206,54 @@ toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/r
 
 //user end
 
+//Accounting
+
+//post requests
+
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glaccounts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glclosures/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/journalentries/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/journalentries?command=updateRunningBalance/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/journalentries\/{transactionId}?command=reverse/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accountingrules/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/financialactivityaccounts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/runaccruals/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningentries/, toolbox.networkFirst,{});
+
+//Accounting get requests
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glaccounts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glaccounts\/{glaccountsId}/, toolbox.cacheFirst,{})
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glclosures/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glclosures\/{glclosureId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/journalentries?transactionId=PB37X8Y21EQUY4S/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/journalentries\/{entryId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accountingrules/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accountingrules\/{accountingruleId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/financialactivityaccounts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/financialactivityaccounts\/{financialactivityaccountId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningentries/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningentries\/{privisioningEntryId}/, toolbox.cacheFirst,{});
 
 
+// Accounting PUT requests
+
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glaccounts\/{glaccountId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glclosures\/{glclosureId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accountingrules\/{accountingruleId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/financialactivityaccounts\/{financialactivityaccountId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningentries\/{provisioningEntryId}?command=recreateprovisioningentry/, toolbox.networkFirst,{});
 
 
+//Accounting delete requests
 
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glaccounts\/{glaccountId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/glclosures\/{glclosureId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accountingrules\/{accountingruleId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/financialactivityaccounts\/{financialactivityaccountId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningentries\/{provisioningEntryId}?command=createjournalentry/, toolbox.networkFirst,{});
 
-
+// accounting end
 
 
 
