@@ -255,9 +255,82 @@ toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/p
 
 // accounting end
 
+//Shares
+
+// POST requests
+
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=approve/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=undoApproval/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=reject/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=close/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=applyadditionalshares/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=approveadditionalshares/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=rejectadditionalshares/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{shareAccountId}?command=redeemshares/, toolbox.networkFirst,{});
+
+//Shares GET requests
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{accountId}/, toolbox.cacheFirst,{});
+
+//Shares PUT requests
+
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/accounts\/share\/{accountId}/, toolbox.networkFirst,{});
 
 
+//Shares END
 
+//Groups 
+
+//groups POST requests
+
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=associateClients/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=disassociateClients/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=transferClients/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=generateCollectionSheet/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=saveCollectionSheet/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=unassignStaff/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=assignStaff/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=close/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=assignRole/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=unassignRole&roleId=1/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}?command=updateRole&roleId=2/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}?command=close/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}?command=associateGroups/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}?command=disassociateGroups/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}?command=generateCollectionSheet/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}?command=saveCollectionSheet/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/collectionsheet?command=generateCollectionSheet/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/collectionsheet?command=saveCollectionSheet/, toolbox.networkFirst,{});
+
+//groups GET requests
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups?paged=true/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/1/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}\/accounts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers?paged=true/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/8/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}\/accounts/, toolbox.cacheFirst,{});
+
+//groups PUT requests
+
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}\/accounts/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}/,  toolbox.networkFirst,{});
+
+//groups delete requests
+
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}\/accounts/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}/,  toolbox.networkFirst,{});
+
+//Groups END
 
 
 
