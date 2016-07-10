@@ -468,7 +468,221 @@ toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/c
 toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/codes\/{codeId}\/codevalues\/{codevalueId}/, toolbox.networkFirst,{});
 toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/makercheckers\/{auditId}/, toolbox.networkFirst,{});
 
+//system END
 
+//ORGANISATION
+
+//POST requests
+
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/offices/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsproducts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositproducts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositproducts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/products\/share/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/funds/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/staff/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/clients\/{clientId}\/images/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/products\/charges/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{productId}\/productmix/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays\/{holidayId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/workingdays/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}\/chartslabs/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}\/allocate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}\/settle/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/paymenttypes/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningcriteria/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/floatingrates/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/component/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/group/, toolbox.networkFirst,{});
+
+
+//GET requests
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/offices/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/offices\/{officeId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{productId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsproducts\/{productId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositproducts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositproducts\/{productId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositproducts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositproducts\/{productId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/products\/share/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/products\/share\/{productId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/currencies/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/funds/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/funds\/{fundId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/staff/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/staff\/{staffId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/clients\/{clientId}\/images/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/charges/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/charges\/{chargeId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts?associations=productMixes/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{productId}\/productmix/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays\/{holidayId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/workingdays\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates\/{Id}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chargeId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}\/chartslabs/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}\/chartslabs\/{slabId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}\/transactions/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}\/summaryandtransactions/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}\/transactions\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/paymenttypes/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/paymenttypes\/{paymentTypeId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningcriteria/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningcriteria\/{criteriaId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/floatingrates/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/floatingrates\/{floatingRateId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/component/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/component\/{taxComponentId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/group/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/group\/{taxGroupId}/, toolbox.cacheFirst,{});
+
+//PUT requests
+
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/offices\/{officeId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{loanId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsproducts\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositproducts\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositproducts\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/products\/share\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/currencies/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/funds\/{fundId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/staff\/{staffId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/clients\/{clientId}\/images/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/charges\/{chargeId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{productId}\/productmix/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays\/{holidayId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates\/{templateId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}\/chartslabs\/{slabId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/paymenttypes\/{paymentTypeId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningcriteria\/{criteriaId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/floatingrates\/{floatingRateId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/component\/{taxComponentId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/taxes\/group\/{taxGroupId}/, toolbox.networkFirst,{});
+
+
+//DElETE requests
+
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsproducts\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositproducts\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositproducts\/{productId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/clients\/{clientId}\/images/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/charges\/{chargeId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{productId}\/productmix/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays\/{holidayId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates\/{templateId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/interestratecharts\/{chartId}\/chartslabs\/{slabId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/tellers\/{tellerId}\/cashiers\/{cashierId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/paymenttypes\/{paymentTypeId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/provisioningcriteria\/{criteriaId}/, toolbox.networkFirst,{});
+
+//ORG End
+
+//Savings
+
+//POST requests
+
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=approve/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=undoApproval/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=assignSavingsOfficer/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=unassignSavingsOfficer/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=reject/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=withdrawnByApplicant/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=close/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=calculateInterest/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{savingsId}?command=postInterest/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountsId}\/transactions?command=deposit/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountsId}\/transactions?command=withdrawl/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountsId}\/transactions\/{transactionId}?command=undo/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountsId}\/transactions\/{transactionId}?command=modify/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges\/{savingsAccountChargeId}?command=paycharge/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges\/{savingsAccountChargeId}?command=waive/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges\/{savingsAccountChargeId}?command=inactive/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=approve/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=undoApproval/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=reject/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{savingsId}?command=withdrawnByApplicant/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=close/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=prematureClose/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=calculatePrematureAmount/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=calculateInterest/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}?command=postInterest/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=approve/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=undoApproval/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=reject/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{savingsId}?command=withdrawnByApplicant/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=activate/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=updateDepositAccount/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=close/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=prematureClose/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=calculatePrematureAmount/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=calculateInterest/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}?command=postInterest/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountsId}\/transactions?command=deposit/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountsId}\/transactions?command=withdrawl/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountsId}\/transactions\/{transactionId}?command=undo/, toolbox.networkFirst,{});
+toolbox.router.post(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountsId}\/transactions\/{transactionId}?command=modify/, toolbox.networkFirst,{});
+
+
+//GET requests
+
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/transactions\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/transactions\/{transactionId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges\/{savingsAccountChargeId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}\/transactions\/template/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}\/transactions\/{transactionId}/, toolbox.cacheFirst,{});
+
+
+//PUT requests
+
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountsId}?command=updateWithHoldTax/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges\/{savingsAccountChargeId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}/, toolbox.networkFirst,{});
+toolbox.router.put(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}/, toolbox.networkFirst,{});
+
+
+//Delete requests
+
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/savingsaccounts\/{accountId}\/charges\/{savingsAccountChargeId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/fixeddepositaccounts\/{accountId}/, toolbox.networkFirst,{});
+toolbox.router.delete(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/recurringdepositaccounts\/{accountId}/, toolbox.networkFirst,{});
+
+
+//Savings End
 
 
 
