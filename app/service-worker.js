@@ -527,6 +527,7 @@ toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loan
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/loanproducts\/{productId}\/productmix/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/holidays\/{holidayId}/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/workingdays/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/workingdays\/template/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/templates\/{Id}/, toolbox.cacheFirst,{});

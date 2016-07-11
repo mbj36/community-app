@@ -676,5 +676,13 @@ var filesToCache =
 'bower_components/underscore/underscore.js',
 'bower_components/underscore/underscore-min.js',
 'bower_components/webcam-directive/app/scripts/webcam.js',
-'release.json'
+'release.json',
+'fonts/fontawesome-webfont.woff',
+'angular/i18n/angular-locale_en.js',
+'../test/functional/scenarioTest.js',
+'../test/functional/demoTest.js',
+'../test/functional/testInitializer.js',
+'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+'bower_components/webcam-directive/dist/1.1.0/webcam.min.js',
+'bower_components/angular-dynamic-locale/tmhDynamicLocale.min.js'
 ];
