@@ -315,9 +315,9 @@ toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/grou
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/template/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/1/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/groups\/{groupId}\/accounts/, toolbox.cacheFirst,{});
-toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers?paged=true/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/template/, toolbox.cacheFirst,{});
-toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/8/, toolbox.cacheFirst,{});
+toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}/, toolbox.cacheFirst,{});
 toolbox.router.get(/^https:\/\/demo.openmf.org\/fineract-provider\/api\/v1\/centers\/{centerId}\/accounts/, toolbox.cacheFirst,{});
 
 //groups PUT requests
