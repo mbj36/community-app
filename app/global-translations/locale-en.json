@@ -594,7 +594,8 @@
     "label.anchor.rejecttransfer": "Reject Transfer Client",
     "label.anchor.undotransfer": "Undo Transfer Client",
     "label.anchor.reactivate":"Reactivate",
-
+    "label.anchor.undoReject":"Undo Rejection",
+    "label.anchor.undoWithdrawn":"Undo Withdrawal",
     "#Inputs": "..",
     "label.input.filterbynameaccno": "Filter display by name/client#/staff/office",
     "label.input.searchByNameAccNo" : "Find by name/mobile#/client#/externalId/identifier#",
@@ -613,6 +614,7 @@
     "label.input.withdrawalreason":"Withdrawal reason",
     "label.input.clientName":"Client Name",
     "label.input.clientId":"Client Id",
+    "label.input.reopeneddate":"Re Opened Date",
 
     "#Buttons": "..",
     "label.button.createclient": "Create Client",
@@ -638,7 +640,8 @@
     "label.button.clear": "Clear",
     "label.button.viewclosedshares":"View Closed Shares",
     "label.button.viewactiveshares":"View Active Shares",
-
+    "label.button.undoReject":"Undo Rejection",
+    "label.button.undoWithdrawn":"Undo Withdrawal",
     "#Misc Labels": "..",
     "label.numofloancycles": "# of loan cycles",
     "label.lastloanamount": "Last loan amount",
@@ -700,7 +703,15 @@
     "validation.msg.CLIENTCHARGE.transaction.invalid.charge.amount.paid.in.access":"Excess payments are not allowed on Client charges",
     "validation.msg.CLIENTCHARGE.dueDate.cannot.be.blank":"Due date is mandatory for client charge",
     "validation.msg.CLIENTCHARGE.transaction.invalid.account.charge.is.already.waived":"Charge is already waived",
-
+    "error.msg.client.reopened.date.cannot.before.client.rejected.date":"Reopened Date cannot be before Client Rejected Date",
+    "error.msg.client.reopened.date.cannot.before.client.withdrawal.date":"Reopened Date cannot be before Client Withdrawal Date",
+    "error.msg.clients.submittedOnDate.after.reopened.date":"Activation Date cannot be before Reopened Date",
+    "error.msg.client.rejection.date.cannot.before.client.submitted.date":"Rejection Date cannot be before Submitted Date",
+    "error.msg.client.withdrawal.date.cannot.before.client.submitted.date":"Withdrawn Date cannot be before Submitted Date",
+    "validation.msg.client.rejectionReasonId.cannot.be.blank":"Client Rejection reason cannot be blank",
+    "validation.msg.client.withdrawalReasonId.cannot.be.blank":"Client Withdrawal reason cannot be blank",
+    "validation.msg.client.rejectionDate.cannot.be.blank":"Client Rejection Date cannot be blank",
+    "validation.msg.client.withdrawalDate.cannot.be.blank":"Client Withrawal Date cannot be blank",
     "#--------": "------------",
 
     "#Groups": "....",
@@ -1329,6 +1340,9 @@
     "label.heading.rejectloanreschedule" : "Reject Loan Reschedule",
     "label.heading.newrepaymentreschedule" : "New Repayment Schedule",
     "label.heading.reschulerequest": "Reschedule Request#",
+    "label.heading.isTopup" : "Is Topup Loan?",
+    "label.heading.loanIdToClose" : "Loan closed with Topup",
+    "label.heading.topupAmount" : "Topup closure amount",
 
     "#Menu Links": "..",
     "label.menu.rescheduleReason": "Select Reschedule Reason",
@@ -1436,6 +1450,8 @@
     "label.input.submittedOnDate" : "Submitted On",
     "label.input.installmentOn" : "Reschedule from Installment On",
     "label.input.applicationdate" : "Application Date",
+    "label.input.isTopup" : "Is Topup Loan",
+    "label.input.loanIdToClose" : "Choose loan to close",
 
     "#Buttons": "..",
     "label.button.addloancharge": "Add Loan Charge",
@@ -1523,6 +1539,7 @@
     "label.tooltip.loanproduct.interestratecyclevariations": "These fields are used to define the minimum, default, maximum, and period for the nominal interest rate allowed for the loan product based on the Loan Cycle. The minimum, default, and maximum nominal interest rates are expressed as percentages.",
     "label.tooltip.loanproduct.floatinginterestrate": "These fields are used to define the minimum, default, maximum, and period for the floating interest rate allowed for the loan product. The minimum, default, and maximum floating interest rates are expressed as percentages.",
     "label.tooltip.loanproduct.variableinstallments": "These fields are used to define the minimum, maximum gap that should be present between the installments for the loan product",
+    "label.tooltip.loanproduct.canUseForTopup": "If selected, the Loan Product can be used to apply for Topup Loans.",
 
     "#tool tip for new loan account":"..",
     "label.tooltip.product":"The name of the loan product that the loan account is based upon",
@@ -2990,6 +3007,7 @@
     "label.input.isfloatingcalculationallowed": "Is Floating Calculation Allowed??",
     "label.input.isvariableinstallmentsallowed": "Is Variable Installments Allowed?",
     "label.input.variableinstallments": "Variable Installments",
+    "label.input.canUseForTopup": "Is allowed to be used for providing Topup Loans?",
     "label.input.minimumgap": "Minimum gap between Installments",
     "label.input.maximumgap": "Maximum gap between Installments",
     "label.input.minimuminstallmentamount": "Minimum Installment Amount",
