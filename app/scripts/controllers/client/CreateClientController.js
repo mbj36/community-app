@@ -1,6 +1,6 @@
 (function (module) {
     mifosX.controllers = _.extend(module, {
-        CreateClientController: function (scope, resourceFactory, location, http, dateFilter, API_VERSION, $upload, $rootScope, routeParams) {
+        CreateClientController: function (scope,resourceFactory, location, http, dateFilter, API_VERSION, $upload, $rootScope, routeParams) {
             scope.offices = [];
             scope.staffs = [];
             scope.savingproducts = [];
@@ -15,6 +15,8 @@
             scope.forceOffice = null;
             scope.showNonPersonOptions = false;
             scope.clientPersonId = 1;
+
+            
 
             var requestParams = {staffInSelectedOfficeOnly:true};
             if (routeParams.groupId) {

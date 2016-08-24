@@ -73,6 +73,25 @@
         $idleProvider.warningDuration(WARN_DURATION); //warning time(sec)
         $keepaliveProvider.interval(KEEPALIVE_INTERVAL); //keep-alive ping
     };
+
+    mifosX.ng.application.config(function(ngDexieProvider){
+        console.log("===================tttttt===============");
+        console.log(ngDexieProvider);
+        
+        ngDexieProvider.setOptions({name: 'databaseName', debug: true});
+
+        ngDexieProvider.setConfiguration(function (db) {
+            console.log(db);
+            db.version(1).stores({
+                notes: "++id,title",
+           });
+            db.on('error', function (err) {
+                // Catch all uncatched DB-related errors and exceptions
+                console.error("db error err=" + err);
+            });
+        });
+    });
+
     mifosX.ng.application.config(defineHeaders).run(function ($log, $idle) {
         $log.info("Initial tasks are done!");
         $idle.watch();
