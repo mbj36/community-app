@@ -2,8 +2,7 @@
   "name": "mifosx-community-app",
   "version": "0.0.0",
   "dependencies": {
-    "sw-toolbox": "^3.2.0",
-    "dexie": "^1.2.0"
+    "sw-toolbox": "^3.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
