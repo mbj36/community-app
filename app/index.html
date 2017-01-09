@@ -11,9 +11,9 @@
 <body  class="preview whitebg" id="top" data-spy="scroll" data-target=".subnav" data-offset="80" data-ng-controller="MainController">
 <!--Loader -->
 
-<div id="loaderWrapper" data-ng-hide="domReady" style="position: absolute; height: 100%; width: 100%; top: 0;">
-    <div id="loader" style="margin: 175px auto">
-        <img src="./images/MifosX_logo.png" alt="MifosX" style="min-width: 50px;   width: 6%; margin: 0 auto" class="img-responsive">
+<div id="loaderWrapper" data-ng-hide="domReady" style="position:relative; height: 100%;">
+    <div id="loader" style="  margin:auto;   height: 300px;  width: 300px;  position:fixed;  top:0;  bottom:0;  left:0; right:0;   display:flex;  flex-direction:column;  justify-content:center; ">
+        <img src="./images/MifosX_logo.png" alt="MifosX" style="min-width: 50px;   width: 6%; margin: 10px auto" class="img-responsive">
         <img src="./images/loader.gif" style="margin: 10px auto" class="img-responsive">
     </div>
 </div>
@@ -83,9 +83,9 @@
                         <strong>{{ 'label.heading.resources' | translate }}</strong>
                     </div>
                     <ul>
-                        <li><a target="https://mifosforge.jira.com/wiki/display/MIFOS/User+Manual" href="https://mifosforge.jira.com/wiki/display/MIFOS/User+Manual">{{ 'label.anchor.usermanual' | translate }}</a></li>
-                        <li><a target="https://mifosforge.jira.com/wiki/pages/viewpage.action?pageId=14712842" href="https://mifosforge.jira.com/wiki/pages/viewpage.action?pageId=14712842">{{ 'label.anchor.functionalspec' | translate }}</a></li>
-                        <li><a href="https://mifosforge.jira.com/wiki/display/MDZ/Welcome+in+the+Zone">{{ 'label.anchor.developerzone' | translate }}</a></li>
+                        <li><a target="_blank" href="https://mifosforge.jira.com/wiki/display/docs/User+Manual">{{ 'label.anchor.usermanual' | translate }}</a></li>
+                        <li><a target="_blank" href="https://mifosforge.jira.com/wiki/pages/viewpage.action?pageId=14712842">{{ 'label.anchor.functionalspec' | translate }}</a></li>
+                        <li><a target = "_blank" href="https://mifosforge.jira.com/wiki/display/MDZ/Welcome+to+the+Zone">{{ 'label.anchor.developerzone' | translate }}</a></li>
                     </ul>
                 </div>
         </div>
@@ -139,7 +139,7 @@
                 </div>
             </div>
         </div>
-        <div class="left-nav">
+        <div class="left-nav" style="display:flex">
         	<ul class="nav nav-pills nav-stacked margin-nav">
                 <li><a class="black" href="#/help"><i class="icon-keyboard icon-large"></i>&nbsp;&nbsp;{{ 'label.anchor.keyboardshortcut' | translate}}</a></li>
                 <li class="divider"></li>
@@ -245,9 +245,13 @@
                         <div class="whitebg" ng-view></div>
                     </div>
                     <!-- Footer -->
-					<footer>
-						<p align="center"> <a href="https://mifosforge.jira.com/browse/MIFOSX/component/11710/?selectedTab=com.atlassian.jira.jira-projects-plugin:component-changelog-panel" target="_blank"> {{'label.relVersion' | translate}} {{version}} | {{'label.relDate' | translate}} {{releasedate}} </a> </p>
-					</footer>
+                    <footer>
+                        <p align="center">
+                            <a href="https://github.com/openMF/incubator-fineract/blob/master/MIFOS-CHANGELOG.md" target="_blank">
+                                {{'label.relVersion' | translate}} {{version}} | {{'label.relDate' | translate}} {{releasedate}}
+                            </a>
+                        </p>
+                    </footer>
                     <hr>
                 </div> <!-- /row-fluid -->
             </div><!-- /blockui-->
