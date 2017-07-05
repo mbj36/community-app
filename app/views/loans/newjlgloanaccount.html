@@ -7,7 +7,6 @@
     <div class="card">
         <div class="content">
                 <form name="newjlgloanform" novalidate="" class="form-inline">
-                    <successful-responses/></successful-responses>
                     <api-validate></api-validate>
                     <div class="">
                         <label>{{ 'label.input.product' | translate }}<span class="required">*</span>:&nbsp;</label>
@@ -79,7 +78,7 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr class="active">
-                                    <th></th>
+                                    <th><input type="checkbox"  ng-click="checkerInboxAllCheckBoxesClicked()" ng-checked="checkerInboxAllCheckBoxesMet()"/></th>
                                     <th>{{'label.heading.clientid' | translate}}</th>
                                     <th>{{'label.heading.clientname' | translate}}</th>
                                     <th>{{'label.heading.loanpurpose' | translate}}</th>
@@ -90,7 +89,7 @@
                             <tbody>
                                 <tr ng-repeat="client in group.clients" ng-init="outerIndex = $index">
                                     <td>
-                                        <input type="checkbox" ng-model="group.clients[outerIndex].isSelected">
+                                        <input type="checkbox" ng-model="group.clients[outerIndex].isSelected" ng-click="checkerInboxAllCheckBoxesMet()">
                                     </td>
                                     <td>{{client.id}}</td>
                                     <td>{{client.displayName}}</td>

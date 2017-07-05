@@ -10,9 +10,6 @@
             scope.hideAccrualTransactions = false;
             scope.isHideAccrualsCheckboxChecked = true;
             scope.loandetails = [];
-            scope.updateCheckBoxStatus = function (){
-                scope.isHideAccrualsCheckboxChecked = !scope.isHideAccrualsCheckboxChecked;
-            };
             scope.routeTo = function (loanId, transactionId, transactionTypeId) {
                 if (transactionTypeId == 2 || transactionTypeId == 4 || transactionTypeId == 1) {
                     location.path('/viewloantrxn/' + loanId + '/trxnId/' + transactionId);
@@ -41,6 +38,7 @@
                         location.path('/addcollateral/' + accountId);
                         break;
                     case "assignloanofficer":
+                    case "changeloanofficer":
                         location.path('/assignloanofficer/' + accountId);
                         break;
                     case "modifyapplication":
@@ -207,7 +205,7 @@
                     ],
                         options: [
                             {
-                                name: "button.assignloanofficer",
+                                name: (scope.loandetails.loanOfficerName?"button.changeloanofficer":"button.assignloanofficer"),
                                 taskPermissionName: 'UPDATELOANOFFICER_LOAN'
                             },
                             {
@@ -248,7 +246,7 @@
                 if (data.status.value == "Approved") {
                     scope.buttons = { singlebuttons: [
                         {
-                            name: "button.assignloanofficer",
+                            name: (scope.loandetails.loanOfficerName?"button.changeloanofficer":"button.assignloanofficer"),
                             icon: "fa fa-user",
                             taskPermissionName: 'UPDATELOANOFFICER_LOAN'
                         },

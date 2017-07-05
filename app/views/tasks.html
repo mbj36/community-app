@@ -15,35 +15,41 @@
                         <uib-tab heading="{{'label.heading.checkerinbox' | translate}}" has-permission='ALL_FUNCTIONS_READ'>
                             <div class="head-affix">
                                 <table class="table condensed-table">
-                                    <div class="form-inline">
-                                        <div class="form-group">
-				                    <span class="input-append grpinputicons">
-				                        <input ng-autofocus="true" autocomplete="off"
-                                               typeahead-on-select="viewUser($item)"
-                                               placeholder="{{'label.input.searchbyuser' | translate}}" type="text"
-                                               ng-model="user"
-                                               uib-typeahead="users.username as users.username for users in checkerTemplate.appUsers | filter:$viewValue | limitTo:8"
-                                               class="form-control">
-				                        <button type="button" ng-click="isCollapsed = !isCollapsed"
-                                                class="btn control btn-default"><i
-                                                class="fa fa-chevron-down"></i></button>
-				                        <button type="button" ng-click="search()" class="btn btn-primary control"><i
-                                                class="fa fa-search icon-white"></i></button>
-				                    </span>
-                                        </div>
-                                        <div class="form-group">
-				                    <span>
-				                        <button type="button" class="btn btn-success"
-                                                data-ng-click="approveOrRejectChecker('approve')"><i
-                                                class="icon-ok"></i>{{'label.button.approve' | translate}}</button>
-				                        <button type="button" class="btn btn-danger" data-ng-click="deleteChecker()"><i
-                                                class="icon-trash"></i>{{'label.button.delete' | translate}}</button>
-				                        <button type="button" class="btn btn-warning"
-                                                data-ng-click="approveOrRejectChecker('reject')"><i
-                                                class="icon-remove"></i>{{'label.button.reject' | translate}}</button>
-				                    </span>
-                                        </div>
-                                    </div>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                            <div class="form-inline">
+                                                <div class="form-group">
+                                            <span class="input-append grpinputicons">
+                                                <input ng-autofocus="true" autocomplete="off"
+                                                       typeahead-on-select="viewUser($item)"
+                                                       placeholder="{{'label.input.searchbyuser' | translate}}" type="text"
+                                                       ng-model="user"
+                                                       uib-typeahead="users.username as users.username for users in checkerTemplate.appUsers | filter:$viewValue | limitTo:8"
+                                                       class="form-control">
+                                                <button type="button" ng-click="isCollapsed = !isCollapsed"
+                                                        class="btn control btn-default"><i
+                                                        class="fa fa-chevron-down"></i></button>
+                                                <button type="button" ng-click="search()" class="btn btn-primary control"><i
+                                                        class="fa fa-search icon-white"></i></button>
+                                            </span>
+                                                </div>
+                                                <div class="form-group">
+                                            <span>
+                                                <button type="button" class="btn btn-success"
+                                                        data-ng-click="approveOrRejectChecker('approve')"><i
+                                                        class="fa fa-check"></i>{{'label.button.approve' | translate}}</button>
+                                                <button type="button" class="btn btn-danger" data-ng-click="deleteChecker()"><i
+                                                        class="fa fa-trash-o"></i>{{'label.button.delete' | translate}}</button>
+                                                <button type="button" class="btn btn-warning"
+                                                        data-ng-click="approveOrRejectChecker('reject')"><i
+                                                        class="fa fa-times"></i>{{'label.button.reject' | translate}}</button>
+                                            </span>
+                                                </div>
+                                            </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
                                 </table>
                             </div>
                             <div uib-collapse="isCollapsed" class="blockoverlay" style="overflow-y: scroll">
@@ -349,7 +355,7 @@
                             </div>
                             <script type="text/ng-template" id="disburseloan.html">
                                 <div class="modal-header silver">
-                                    <h3 class="bolder">{{'label.heading.disburse' | translate}}</h3>
+                                    <h3 class="bolder">{{'label.heading.rescheduleloan' | translate}}</h3>
                                 </div>
                                 <div class="modal-body">
                                     <api-validate></api-validate>
@@ -403,7 +409,7 @@
                                         </th>
                                         <th>
                                             <button type="button" class="btn btn-success"
-                                                    data-ng-click="approveLoanReschedule()"
+                                                    data-ng-click="approveBulkLoanReschedule()"
                                                     has-permission='APPROVE_LOANRESCHEDULE'><i class="icon-ok"></i>{{'label.button.approve'
                                                 | translate}}
                                             </button>
@@ -414,7 +420,7 @@
                             </div>
                             <script type="text/ng-template" id="loanreschedule.html">
                                 <div class="modal-header silver">
-                                    <h3 class="bolder">{{'label.heading.disburse' | translate}}</h3>
+                                    <h3 class="bolder">{{'label.heading.rescheduleloan' | translate}}</h3>
                                 </div>
                                 <div class="modal-body">
                                     <api-validate></api-validate>
@@ -431,17 +437,22 @@
                                 <table class="table condensed-table">
                                     <thead>
                                     <tr class="graybg">
-                                        <th></th>
+                                        <th><input type="checkbox" ng-click="checkerInboxAllCheckBoxesClickedForBulkLoanRescheduleApproval()" ng-checked="checkerInboxAllCheckBoxesMetForBulkLoanRescheduleApproval()"/></th>
                                         <th>{{'label.heading.client' | translate}}</th>
                                         <th>{{'label.heading.reschulerequest' | translate}}</th>
                                         <th>{{'label.heading.loanaccountnum' | translate}}</th>
-                                        <th>{{'label.heading.loanproduct' | translate}}</th>
-                                        <th>{{'label.heading.principal' | translate}}</th>
+                                        <th>{{'label.heading.reschedulefrom' | translate}}</th>
+                                        <th>{{'label.heading.reschedulereason' | translate}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-
-
+                                      <tr dir-paginate="loanReschedule in loanRescheduleData | itemsPerPage: itemsPerPage">         	<td><input type="checkbox" data-ng-model="checkForBulkLoanRescheduleApprovalData[loanReschedule.id]"/></td>
+                                      <td><a href="#/viewclient/{{loanReschedule.clientId}}">{{loanReschedule.clientName}}</a></td>
+                                      <td><a href="#/loans/{{loanReschedule.loanId}}/viewreschedulerequest/{{loanReschedule.id}}">{{loanReschedule.id}}</a></td>
+                                      <td><a href="#/viewloanaccount/{{loanReschedule.loanId}}">{{loanReschedule.loanAccountNumber}}</a></td>
+                                      <td><a>{{loanReschedule.rescheduleFromDate | DateFormat}}</a></td>
+                                      <td><a>{{loanReschedule.rescheduleReasonCodeValue.name}}</a></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

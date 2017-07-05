@@ -1,9 +1,9 @@
-<div class="col-md-12" ng-controller="RecurringDepositAccountActionsController">
+<div class="content-container" ng-controller="RecurringDepositAccountActionsController">
     <ul class="breadcrumb">
         <li><a href="#/viewrecurringdepositaccount/{{accountId}}">{{'label.anchor.viewrecurringdepositaccount' | translate}}</a></li>
         <li class="active">{{action}}</li>
     </ul>
-    <form name="savingccountactionform" novalidate="" class="form-horizontal well" ng-submit="submit()">
+    <form name="savingccountactionform" novalidate="" class="form-horizontal well card" ng-submit="submit()">
         <api-validate></api-validate>
         <fieldset>
             <legend>{{ title | translate}}</legend>
@@ -23,6 +23,9 @@
 
                 <div class="col-sm-3">
                     <input id="transactionAmount" type="text" name="transactionAmount"  number-format class="form-control" ng-model="formData.transactionAmount" />
+                </div>
+                <div class="col-sm-5">
+                    <span ng-if="outstandingChargeAmount">( {{'label.input.totalinstallmentamount' | translate}} : {{amount}} + {{'label.heading.chargeamount' | translate}} : {{outstandingChargeAmount}} )</span>
                 </div>
             </div>
             <div ng-show="isAccountClose">

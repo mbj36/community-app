@@ -163,6 +163,7 @@
 </div>
 <div class="form-group">
     <label class="control-label col-sm-2">{{ 'label.input.principal' | translate }}
+        <span class="required">*</span>
         <i class="fa fa-question-sign" tooltip="{{'label.tooltip.loanproduct.principal' | translate}}"
            tooltip-append-to-body="true"></i>
     </label>
@@ -236,6 +237,7 @@
 </div>
 <div class="form-group">
     <label class="control-label col-sm-2">{{ 'label.input.numofrepayments' | translate }}
+        <span class="required">*</span>
         <i class="fa fa-question-sign" tooltip="{{'label.tooltip.loanproduct.numofrepayments' | translate}}"
            tooltip-append-to-body="true"></i>
     </label>
@@ -449,6 +451,7 @@
 </div>
 <div class="form-group">
     <label class="control-label col-sm-2">{{ 'label.input.repaidevery' | translate }}
+        <span class="required">*</span>
         <i class="fa fa-question-sign" tooltip="{{'label.tooltip.repaidevery' | translate}}"
            tooltip-append-to-body="true"></i>
     </label>
@@ -521,10 +524,13 @@
     </label>
 
     <div class="col-sm-2"  ng-show="formData.interestCalculationPeriodType == 1">
-        <label class="checkbox control-label">
-            <input id="allowPartialPeriodInterestCalcualtion" type="checkbox"
-                   ng-model="formData.allowPartialPeriodInterestCalcualtion">
+        <label class="checkbox">
+            <input name="allowPartialPeriodInterestCalcualtion" id="allowPartialPeriodInterestCalcualtion" type="checkbox"
+                   ng-model="formData.allowPartialPeriodInterestCalcualtion" required>
         </label>
+    </div>
+    <div class="col-sm-2">
+        <form-validate valattributeform="createloanproductform" valattribute="allowPartialPeriodInterestCalcualtion"/>
     </div>
 </div>
 
@@ -605,8 +611,8 @@
 <div class="form-group">
     <label class="control-label col-sm-4">{{ 'label.input.candefineinstallmentamount' | translate }}</label>
 
-    <div class="col-sm-2">
-        <label class="checkbox control-label">
+    <div class="col-sm-2 checkbox">
+        <label>
             <input type="checkbox" ng-model="formData.canDefineInstallmentAmount"/>
         </label>
     </div>
@@ -641,11 +647,14 @@
     <label class="control-label col-sm-4">{{'label.input.loan.account.moves.out.of.npa.only.on.arrears.completion'
         | translate }}<span class="required">*</span></label>
 
-    <div class="col-sm-2">
-        <label class="checkbox control-label">
+    <div class="col-sm-2 checkbox">
+        <label>
             <input id="accountMovesOutOfNPAOnlyOnArrearsCompletion" type="checkbox"
-                   ng-model="formData.accountMovesOutOfNPAOnlyOnArrearsCompletion">
+                   ng-model="formData.accountMovesOutOfNPAOnlyOnArrearsCompletion" name="accountMovesOutOfNPAOnlyOnArrearsCompletion" required>
         </label>
+    </div>
+     <div class="col-sm-2">
+        <form-validate valattributeform="createloanproductform" valattribute="accountMovesOutOfNPAOnlyOnArrearsCompletion"/>
     </div>
 </div>
 
@@ -699,8 +708,8 @@
 <div class="form-group">
     <label class="control-label col-sm-2">{{ 'label.input.recalculateinterest' | translate }}</label>
 
-    <div class="col-sm-2">
-        <label class="checkbox control-label">
+    <div class="col-sm-2 checkbox">
+        <label>
             <input type="checkbox" ng-model="formData.isInterestRecalculationEnabled"/>
         </label>
     </div>
@@ -847,8 +856,8 @@
     <label class="control-label col-sm-2">{{'label.input.arrearsbasedonoriginalschedule'
         | translate }}<span class="required">*</span></label>
 
-    <div class="col-sm-2">
-        <label class="checkbox control-label">
+    <div class="col-sm-2 checkbox">
+        <label>
             <input id="isArrearsBasedOnOriginalSchedule" type="checkbox"
                    ng-model="formData.isArrearsBasedOnOriginalSchedule">
         </label>
@@ -860,8 +869,8 @@
 <div class="form-group">
     <label class="control-label col-sm-2">{{ 'label.input.holdguaranteefunds' | translate }}</label>
 
-    <div class="col-sm-2">
-        <label class="checkbox control-label">
+    <div class="col-sm-2 checkbox">
+        <label>
             <input type="checkbox" ng-model="formData.holdGuaranteeFunds"/>
         </label>
     </div>

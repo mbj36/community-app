@@ -4,7 +4,8 @@
 		    <li><a href="#/recurringdepositproducts">{{'label.anchor.recurringdepositproducts' | translate}}</a></li>
 		    <li class="active">{{depositproduct.name}}</li>
 		</ul>
-<div class="card well">
+<div class="card">
+    <div class="content">
     <legend>
         <div class="pull-right">
             <div class="btn-group">
@@ -181,7 +182,7 @@
         <td ng-show="!depositproduct.activeChart.isPrimaryGroupingByAmount && chartSlab.amountRangeFrom != undefined">{{chartSlab.amountRangeFrom}} - {{chartSlab.amountRangeTo}}</td>
         <td ng-show="!depositproduct.activeChart.isPrimaryGroupingByAmount && chartSlab.amountRangeFrom == undefined">&nbsp;</td>
         <td>{{chartSlab.annualInterestRate}}</td>
-        <td>{{chartSlabs.description}}</td>
+        <td>{{chartSlab.description}}</td>
         <td><a ng-click="incentives($index)"><i class=""></i>{{'label.incentive.row'
             | translate}}</a></td>
     </tr>

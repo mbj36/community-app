@@ -29,8 +29,6 @@ div.scrollable {
 
   &:before, &:after {
     background: #ffffff;
-    border: solid 1px #ccc;
-    border-radius: 4px 4px 0 0;
     cursor: pointer;
     font-weight: bold;
     line-height: 42px;
@@ -158,6 +156,12 @@ span.required {
   max-height: 100px;
 }
 
+.strikeoff{
+  color: red !important;
+  text-decoration:line-through;
+  text-decoration-style: double;
+}
+
 .breadcrumb{
   padding: 2px;
   margin-bottom: 4px;
@@ -175,6 +179,7 @@ span.required {
     max-width: 1124px;
     margin: 0 auto;
   }
+  background-color: #ebeff1;
 }
 
 .centerloader
@@ -218,7 +223,7 @@ span.required {
     background-color: #4f99ed;
     color: #fff;
   }
-  
+
 .statusoverpaid {
     color: #800080
 }
