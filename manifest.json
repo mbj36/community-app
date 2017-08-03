@@ -1,7 +1,7 @@
 {
   "name": "Mifos X",
   "short_name": "Mifos X",
-  "start_url": "/?baseApiUrl=https://demo.openmf.org#/",
+  "start_url": "./?baseApiUrl=https://demo.openmf.org",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#fcf8e3",
