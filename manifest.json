@@ -4,7 +4,7 @@
   "start_url": "./?baseApiUrl=https://demo.openmf.org",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#fcf8e3",
+  "theme_color": "#4f99ed",
   "description": "MifosX community web app",
   "orientation": "portrait-primary",
   "icons": [{
