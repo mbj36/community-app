@@ -6,7 +6,8 @@ console.log("Caching all the fineract APIs");
 //Clients GET requests
 toolbox.precache([
     './?baseApiUrl=https://demo.openmf.org',
-    'service-worker.js'
+    'service-worker.js',
+    'bower_components/requirejs/require.js'
 ]);
 toolbox.router.get(/fineract-provider\/api\/v1\/clients/, toolbox.cacheFirst, {});
 toolbox.router.get(/fineract-provider\/api\/v1\/clients\/{clientId}\/transaction\/{transactionId}/, toolbox.cacheFirst, {});
