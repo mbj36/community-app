@@ -14211,14 +14211,14 @@
             //Logout the user if Idle
             scope.started = false;
             scope.$on('$idleTimeout', function() {
-                //scope.logout();
+                scope.logout();
                 $idle.unwatch();
                 scope.started = false;
             });
 
             // Log out the user when the window/tab is closed.
             window.onunload = function() {
-                //scope.logout();
+                scope.logout();
                 $idle.unwatch();
                 scope.started = false;
             };
