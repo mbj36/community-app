@@ -1,7 +1,9 @@
 {
   "name": "mifosx-community-app",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "sw-toolbox": "^3.6.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
